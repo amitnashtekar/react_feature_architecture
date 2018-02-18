@@ -20,7 +20,8 @@ export default class ReInputBox extends Component {
 
 	onInputChnage =(e)=>{
 		e.persist();
-		this.setState(prevState => ({ value:e.target.value}))
+		this.setState(prevState => ({ value:e.target.value}));
+		this.props.onTextEnter(e.target.value);
 	}
 
 	render(){

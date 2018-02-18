@@ -14,14 +14,19 @@ class  CustomerSearch extends Component {
   
 }
  static defaultProps={text:"search"}
+
  clickHandler = () => {
   this.props.actions.searchStart();
+ }
+
+ onTextEnter=(searchText)=>{
+  this.props.actions.searchStart(searchText);
  }
   render() {
     return (
       <div>
       <div id="customer-search" className="customer-search">{this.state.title},{JSON.stringify(this.props.cust_search)}</div>
-      <ReInputBox placeHolder="enter text to search" ></ReInputBox>
+      <ReInputBox placeHolder="enter text to search" onTextEnter={this.onTextEnter} ></ReInputBox>
       <ReButton clickHandler={this.clickHandler} text={this.props.text}></ReButton>
 
       </div>

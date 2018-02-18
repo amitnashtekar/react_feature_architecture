@@ -1,17 +1,20 @@
 import { combineReducers } from 'redux';
-import * as cust_search_A from './actions';
+import * as cust_search from './actions';
 
 const initialState = {
 	loading:false,
-	payload:null,
-	error:null
+	searchStr:'',
+	payload:null
 }
 
 const cust_search_reducer=(state=initialState,action) => {
 	switch(action.type) {
-		case cust_search_A._start: return {
-			...initialState,loading:true
+		case cust_search._start: return {
+			...state,loading:true,searchStr:action.searchStr
 		}
+		case cust_search._success: return {
+			...state,loading:false,payload:action.payload
+		} 
 		default: return state;
 	}
 

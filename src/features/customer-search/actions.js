@@ -1,10 +1,13 @@
+import axios from 'axios';
+import customers from '../../data/customers.JSON';
 export const _start = "cust_search/START";
 export const _success = "cust_search/SUCCESS";
 export const _fail = "cust_search/FAIL";
 
-export const searchStart =() => ({ 
+export const searchStart =(searchStr) => ({ 
 type: _start,
-loading:true
+loading:true,
+searchStr
 });
 
 export const searchSuccess =(payload) => ({ 
@@ -20,3 +23,23 @@ loading:false,
 payload:null,
 error:error
 });
+
+// export const getCustomer=(searchStr)=> {
+// 	return axios.get('/src/data/customers.json')
+//             .then((resp)=>{
+//             	return resp;
+//             }).catch((err)=>{
+//             	return err;
+//             })
+// } 
+ export const getCustomer=(date) =>{
+  return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+           customers
+        });
+      }, 2000);
+   });
+  }
+
+
