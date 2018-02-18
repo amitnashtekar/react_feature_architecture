@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import * as cust_search from './actions';
+import {ASYNC_ERROR} from '../../app/middleware/errorHandler';
 
 const initialState = {
 	loading:false,
@@ -14,6 +15,9 @@ const cust_search_reducer=(state=initialState,action) => {
 		}
 		case cust_search._success: return {
 			...state,loading:false,payload:action.payload
+		}
+		case `cust_search${ASYNC_ERROR}`: return {
+			...state,loading:false,error:action.error
 		} 
 		default: return state;
 	}

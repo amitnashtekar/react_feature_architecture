@@ -2,7 +2,7 @@ import axios from 'axios';
 import customers from '../../data/customers.JSON';
 export const _start = "cust_search/START";
 export const _success = "cust_search/SUCCESS";
-export const _fail = "cust_search/FAIL";
+
 
 export const searchStart =(searchStr) => ({ 
 type: _start,
@@ -17,12 +17,7 @@ payload:payload,
 error:null
 });
 
-export const searchFail =(error) => ({ 
-type: _fail,
-loading:false,
-payload:null,
-error:error
-});
+
 
 // export const getCustomer=(searchStr)=> {
 // 	return axios.get('/src/data/customers.json')
@@ -33,7 +28,7 @@ error:error
 //             })
 // } 
  export const getCustomer=(date) =>{
-  return new Promise((resolve) => {
+  return new Promise((resolve,reject) => {
       setTimeout(() => {
         resolve({
            customers
