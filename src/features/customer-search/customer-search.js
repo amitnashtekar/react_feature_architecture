@@ -6,6 +6,7 @@ import {ReButton, ReInputBox} from "../common";
 import * as cust_search_actions from './actions';
 import { bindActionCreators } from 'redux'
 import './customer-search.scss';
+import {custListSelector} from './selectors';
 
 class  CustomerSearch extends Component {
  state = { title:  'Welcome to React setup!!!'};
@@ -25,7 +26,7 @@ class  CustomerSearch extends Component {
   render() {
     return (
       <div>
-      <div id="customer-search" className="customer-search">{this.state.title},{JSON.stringify(this.props.cust_search)}</div>
+      <div id="customer-search" className="customer-search">{this.state.title},{JSON.stringify(this.props.filteredList)}</div>
       <ReInputBox placeHolder="enter text to search" onTextEnter={this.onTextEnter} ></ReInputBox>
       <ReButton clickHandler={this.clickHandler} text={this.props.text}></ReButton>
 
@@ -34,14 +35,21 @@ class  CustomerSearch extends Component {
   }
 }
 
-const mapStateToProps = ({cust_search}) => ({
-  ...cust_search
+const getmapStateToProps = () => {
+const filterList = custListSelector();
+const mapStateToProps = ({cust_search},props) => {
+  return {
+    filteredList:filterList(cust_search, props)
+  }
 
-});
+};
+return mapStateToProps
+}
+
 
 
 const CustomerSearchContainer = connect(
-mapStateToProps,
+getmapStateToProps,
 dispatch => ({actions:bindActionCreators(cust_search_actions, dispatch)})
 
 )(CustomerSearch);
