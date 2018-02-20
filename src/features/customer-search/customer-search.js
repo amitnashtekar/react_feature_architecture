@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import {string} from 'prop-types';
 import { connect } from 'react-redux'
-import {ReButton, ReInputBox} from "../common";
+import {ReButton, ReInputBox, ReItemList} from "../common";
 import * as cust_search_actions from './actions';
-import { bindActionCreators } from 'redux'
-import './customer-search.scss';
+import { bindActionCreators } from 'redux';
 import {custListSelector} from './selectors';
+import './customer-search.scss';
 
 class  CustomerSearch extends Component {
  state = { title:  'Welcome to React setup!!!'};
@@ -29,7 +29,7 @@ class  CustomerSearch extends Component {
       <div id="customer-search" className="customer-search">{this.state.title},{JSON.stringify(this.props.filteredList)}</div>
       <ReInputBox placeHolder="enter text to search" onTextEnter={this.onTextEnter} ></ReInputBox>
       <ReButton clickHandler={this.clickHandler} text={this.props.text}></ReButton>
-
+      {this.props.filteredList ?<ReItemList listItems={this.props.filteredList}/>:null}
       </div>
     );
   }
