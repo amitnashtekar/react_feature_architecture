@@ -10,7 +10,7 @@ import './customer-search.scss';
 
 
 class  CustomerSearch extends Component {
- state = { title:  'Welcome to React setup!!!'};
+ 
  static propTypes = {
   text: string,
   filteredList: array
@@ -32,7 +32,7 @@ class  CustomerSearch extends Component {
     return (
       <div>
       
-      <div id="customer-search" className="customer-search">{this.state.title}</div>
+      
       <ReInputBox placeHolder="enter text to search" onTextEnter={this.onTextEnter} isSearch="true" ></ReInputBox>
       <ReButton clickHandler={this.clickHandler} text={this.props.text} isVisible="none"></ReButton>
       {this.props.filteredList.length>0 ?<ReItemList listItems={this.props.filteredList}/>:null}

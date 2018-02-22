@@ -49,12 +49,14 @@ module.exports = {
                         },
                         {
                             loader: 'sass-loader'
+
                         },
                         {
                             loader: 'sass-resources-loader',
                             query: {
                                 resources: [
-                                path.resolve(__dirname, '../src/scss-resources/_colours.scss')
+                                path.resolve(__dirname, '../src/scss-resources/_colours.scss'),
+                                path.resolve(__dirname, '../src/scss-resources/mixins.scss')
                                 ],
                             }
                         }
