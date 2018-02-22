@@ -16,7 +16,15 @@ export default class Router extends Component {
 				<Switch>
 					<Route path="/search" component={CustomerSearch} />
 					<Route exact path="/" component={()=>{
-						return <div>Thank you</div>
+						return (
+							<div classname="container">
+							<div className="row">
+							<div className="col-lg-8 col-lg-offset-8">
+							<h1 className="home-header">Thank you</h1>
+							</div>
+							</div>
+							</div>
+							)
 					}} />
 					<Redirect from='*' to='/' /> 
 				</Switch>

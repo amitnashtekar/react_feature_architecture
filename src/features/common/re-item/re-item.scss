@@ -9,10 +9,10 @@
 
 .re-item:nth-child(odd) {
     
-    background-color: #f2f2f2;
+    background-color: #aab2e0;
     display: table-row;
     font-size: 9pt;
-    color: #5c5c5c;
+    color: #ffff;
 
 }
 .re-item:nth-child(odd):hover {
@@ -23,7 +23,7 @@
 
 .re-item:nth-child(even) {
     
-    background-color: #e8e8e8;
+    background-color: #ffff;
     display: table-row;
     font-size: 9pt;
     color: #5c5c5c;
