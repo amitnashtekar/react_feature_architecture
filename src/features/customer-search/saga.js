@@ -1,9 +1,9 @@
-import { takeLatest, put ,call} from 'redux-saga/effects';
+import { takeLatest, put ,call, fork} from 'redux-saga/effects';
 import {ASYNC_ERROR} from '../../app/middleware/errorHandler';
 
 import * as actions from './actions';
 
-export function* incrementAsync(searchStr) {
+export function* custSearch(searchStr) {
 	 try{
 	  
 	  const custList = yield call(actions.getCustomer,searchStr);
@@ -14,5 +14,7 @@ export function* incrementAsync(searchStr) {
 }
 
 export default function* rootSaga() {
-  yield takeLatest(actions._start, incrementAsync);
+	yield fork(custSearch,'');
+  yield takeLatest(actions._start, custSearch);
+
 }
