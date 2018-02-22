@@ -7,7 +7,7 @@ import './re-item-list.scss';
 
 export default function ReItemList ({listItems}) {
 	
-	const ItemsArr = listItems.map(function(item){
+	const ItemsArr = _.values(listItems).map(function(item){
 		return <ReItem item={item} key={item.id} /> 
 	});
 

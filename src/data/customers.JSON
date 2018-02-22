@@ -1,5 +1,5 @@
-[
-  {
+{
+ "customers": [{
     "Account": "Veterans Adm Medical Ctr",
     "Address": "3001 GREEN BAY ROAD",
     "State": "IL",
@@ -400,3 +400,4 @@
     "id": 51
   }
 ]
+}

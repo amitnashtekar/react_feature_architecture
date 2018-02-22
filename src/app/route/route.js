@@ -17,7 +17,7 @@ export default class Router extends Component {
 					<Route path="/search" component={CustomerSearch} />
 					<Route exact path="/" component={()=>{
 						return (
-							<div classname="container">
+							<div className="container">
 							<div className="row">
 							<div className="col-lg-8 col-lg-offset-8">
 							<h1 className="home-header">Thank you</h1>

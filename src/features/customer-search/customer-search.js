@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import {string, array} from 'prop-types';
+import {string, array, object} from 'prop-types';
 import { connect } from 'react-redux'
 import {ReButton, ReInputBox, ReItemList} from "../common";
 import * as cust_search_actions from './actions';
@@ -13,12 +13,12 @@ class  CustomerSearch extends Component {
  
  static propTypes = {
   text: string,
-  filteredList: array
+  filteredList: object
   
 }
  static defaultProps={
     text:"search",
-    filteredList:[]
+    filteredList:{}
   }
 
  clickHandler = () => {
@@ -35,7 +35,7 @@ class  CustomerSearch extends Component {
       
       <ReInputBox placeHolder="enter text to search" onTextEnter={this.onTextEnter} isSearch="true" ></ReInputBox>
       <ReButton clickHandler={this.clickHandler} text={this.props.text} isVisible="none"></ReButton>
-      {this.props.filteredList.length>0 ?<ReItemList listItems={this.props.filteredList}/>:null}
+      {this.props.filteredList ?<ReItemList listItems={this.props.filteredList}/>:null}
       </div>
     );
   }
