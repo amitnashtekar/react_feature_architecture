@@ -4,6 +4,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
+
 
 module.exports = {
     entry: [
@@ -67,6 +70,7 @@ module.exports = {
     },
 
     plugins: [
+        new CleanWebpackPlugin(['public/*.*'], { root:path.resolve(__dirname, '../')}),
 		new HtmlWebPackPlugin({
 		  template: "./src/index.html",
 		  filename: "./index.html"
