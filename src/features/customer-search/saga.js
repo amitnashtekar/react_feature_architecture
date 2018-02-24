@@ -5,9 +5,10 @@ import * as actions from './actions';
 
 export function* custSearch(searchStr) {
 	 try{
-	  
+
 	  const custList = yield call(actions.getCustomer,searchStr);
 	  yield put({type: actions._success, payload: custList });
+	  
 	}catch(e){
 		yield put({type: `${ASYNC_ERROR}`, error: e,reducerName:'cust_search' });
 	}

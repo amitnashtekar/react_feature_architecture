@@ -7,7 +7,7 @@
     "build": "SET NODE_ENV=production && webpack --config webpack/prod.config.js",
     "start": "SET NODE_ENV=development && webpack-dev-server --config webpack/dev.config.js"
   },
-  "author": "",
+  "author": "Amit",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^8.0.0",

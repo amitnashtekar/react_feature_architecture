@@ -30,13 +30,11 @@ class  CustomerSearch extends Component {
  }
   render() {
     return (
-      <div>
-      
-      
-      <ReInputBox placeHolder="enter text to search" onTextEnter={this.onTextEnter} isSearch="true" ></ReInputBox>
-      <ReButton clickHandler={this.clickHandler} text={this.props.text} isVisible="none"></ReButton>
-      {this.props.filteredList ?<ReItemList listItems={this.props.filteredList}/>:null}
-      </div>
+        <div>
+          <ReInputBox placeHolder="enter text to search" onTextEnter={this.onTextEnter} isSearch="true" ></ReInputBox>
+          <ReButton clickHandler={this.clickHandler} text={this.props.text} isVisible="none"></ReButton>
+          {this.props.filteredList ?<ReItemList listItems={this.props.filteredList}/>:null}
+        </div>
     );
   }
 }

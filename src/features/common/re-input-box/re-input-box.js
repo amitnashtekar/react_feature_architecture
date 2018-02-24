@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-
 import {string} from 'prop-types';
-import {Glyphicon} from 'react-bootstrap';
-import './re-input-box.scss';
 import FA from 'react-fontawesome';
+import './re-input-box.scss';
+
 export default class ReInputBox extends Component {
 
 	state={
@@ -30,22 +29,22 @@ export default class ReInputBox extends Component {
 		
 		
 		return (
-			<div className="re-input-box ">
-			{!this.props.isSearch?
-				 <input className="form-control" type={this.props.type} value={this.state.value} placeholder={this.props.placeHolder} onChange={this.onInputChnage} />	
-				:			
-				<div className="input-group">
-				<FA
-			        className='form-control fa'
-			        name='search'
-			        style={{ width: '1%' }}
-			    
-			      />
-				 <input className="form-control faw-input" type={this.props.type} value={this.state.value} placeholder={this.props.placeHolder} onChange={this.onInputChnage} />	
-				 
+				<div className="re-input-box ">
+				{!this.props.isSearch?
+					 <input className="form-control" type={this.props.type} value={this.state.value} placeholder={this.props.placeHolder} onChange={this.onInputChnage} />	
+					:			
+					<div className="input-group">
+					<FA
+				        className='form-control fa'
+				        name='search'
+				        style={{ width: '1%' }}
+				    
+				      />
+					 <input className="form-control faw-input" type={this.props.type} value={this.state.value} placeholder={this.props.placeHolder} onChange={this.onInputChnage} />	
+					 
+					</div>
+				}
 				</div>
-			}
-			</div>
 			)
 
 	}

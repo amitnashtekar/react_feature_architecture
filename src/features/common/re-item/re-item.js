@@ -8,10 +8,10 @@ export default function ReItem ({item}) {
 		return <span className="li-span">{item[keyName]}</span>
 	});
 	return (
-		<li className="re-item">
-		{
-			makeItem
-		}
-		</li> 
+			<li className="re-item">
+			{
+				makeItem
+			}
+			</li> 
 		) 
 } 

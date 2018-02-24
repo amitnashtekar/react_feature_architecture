@@ -8,16 +8,16 @@ import './re-item-list.scss';
 export default function ReItemList ({listItems}) {
 	
 	const ItemsArr = _.values(listItems).map(function(item){
-		return <ReItem item={item} key={item.id} /> 
+		return <ReItem item={_.omit(item,['id'])} key={item.id} /> 
 	});
 
 	return (
-	<div className="re-item-list container">
-		<div className="listWrap">
-		<ul className="list">
-		{ItemsArr}
-		</ul>
-		</div>
-	</div>
+			<div className="re-item-list">
+				<div className="container">
+				<ul className="list">
+				{ItemsArr}
+				</ul>
+				</div>
+			</div>
 	)
 }
